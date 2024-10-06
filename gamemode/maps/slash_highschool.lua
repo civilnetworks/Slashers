@@ -8,7 +8,7 @@
 local GM = GM or GAMEMODE
 
 GM.MAP.Name = "Highschool"
-GM.MAP.EscapeDuration = 60
+GM.MAP.EscapeDuration = 120
 GM.MAP.StartMusic = "slashers_start_game_ghostface.wav"
 GM.MAP.ChaseMusic = "slashers/ambient/chase_ghostface.wav"
 GM.MAP.Goal = {

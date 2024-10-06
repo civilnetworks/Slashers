@@ -61,6 +61,8 @@ function playermeta:SetupKiller()
 	self:SetMaxHealth(100)
 	self:GodEnable()
 	self.ClassID = CLASS_KILLER
+
+	hook.Run("Slashers_SetupKiller", self, GM.MAP.Killer)
 end
 
 function GM.CLASS:SetupSurvivors()

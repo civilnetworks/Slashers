@@ -333,6 +333,8 @@ local function InitPostEntity()
 			if ply:Team() != TEAM_SURVIVORS then return end
 			ply:SetNWBool("Escaped", true)
 			ply:KillSilent()
+
+			hook.Run("Slashers_Escape", ply)
 		end
 	end
 

@@ -12,23 +12,23 @@ GM.CONFIG["disabled_modules"] = {
 	-- ["goal"] = true, -- set true to disable module
 }
 
--- Armes pour le tueur
+-- Weapons for the Killer
 GM.CONFIG["killer_weapons"] = {
 	"tfa_nmrih_chainsaw",
 	-- "tfa_nmrih_kknife",
 	"tfa_nmrih_fireaxe",
 	"tfa_nmrih_machete"
 }
--- Armes pour les survivants
+-- Weapons for survivors
 GM.CONFIG["survivors_weapons"] = {
 	"weapon_flashlight"
 }
--- Points ajoutés de choosekiller ajoutés à chaque manche terminée
+-- Adds addedkins added to each completed round
 GM.CONFIG["round_choosekiller_add"] = 10
--- Temps de démarrage de la manche (secondes)
+-- Round start time (seconds)
 GM.CONFIG["round_freeze_start"] = 10
--- Durée d'attente lors d'une fin de manche
-GM.CONFIG["round_duration_end"] = 30
+-- Waiting time at the end of a round
+GM.CONFIG["round_duration_end"] = 20
 
 -- Entités Killerhelp porte
 GM.CONFIG["killerhelp_door_entities"] = {

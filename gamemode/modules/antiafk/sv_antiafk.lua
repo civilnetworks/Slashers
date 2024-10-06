@@ -35,14 +35,20 @@ local function Think()
 			v:SetNWInt("afk_warn", 0)
 
 		elseif curtime > v.afktime + (CV_afktime:GetInt() + CV_afkmsgtime:GetInt()) then
-			-- Kick
-			v:Kick("You're kicked by anti-afk system.")
-			for _, u in ipairs(player.GetAll()) do
-				u:ChatPrint(v:Name() .. " kicked by anti-afk")
+		
+			if(gamemode.Get("slashers").ROUND.WaitingPlayers)then 
+				v.afktime = curtime
+				return
 			end
+			
+			-- Kill
+			v:Kill()
 
 		elseif v:GetNWInt("afk_warn") == 0 && curtime > v.afktime + CV_afktime:GetInt() then
 			-- Warning
+			
+			if(gamemode.Get("slashers").ROUND.WaitingPlayers)then return end
+			
 			v:SetNWInt("afk_warn", v.afktime + (CV_afktime:GetInt() + CV_afkmsgtime:GetInt()))
 		end
 	end

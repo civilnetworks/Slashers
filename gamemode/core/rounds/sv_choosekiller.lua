@@ -12,6 +12,11 @@ function GM.ROUND:ChooseKiller()
 	local tbl = {}
 	local winkey = 0
 	for _, v in ipairs(player.GetAll()) do
+		-- Do not choose bots as killers
+		if (v:IsBot()) then
+			continue
+		end
+
 		if !tbl[v.choosekiller] then
 			tbl[v.choosekiller] = {}
 		end

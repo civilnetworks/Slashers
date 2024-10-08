@@ -197,7 +197,7 @@ if CLIENT then
 		elseif level == 1 then
 			GM:playSoundMother("sound/slashers/effects/whisper_loop_small.wav")
 		else
-			if GM.SoundPlayed then
+			if IsValid(GM.SoundPlayed) then
 				GM.SoundPlayed:Stop()
 			end
 		end

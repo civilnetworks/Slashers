@@ -10,6 +10,10 @@ local BackGroundPanel, timed
 
 function ShowPlayerScreen(TeamName,TeamText,CharacName,CharacText,ImageCharac,Time,isOpen,active)
 
+	if IsValid(BackGroundPanel) then
+		return
+	end
+
 	if TeamName == nil or TeamText == nil or CharacName == nil or ImageCharac == nil then
 		return
 	end
@@ -107,6 +111,12 @@ function ShowPlayerScreen(TeamName,TeamText,CharacName,CharacText,ImageCharac,Ti
 					isOpen = false
 					timed = false
 				end)
+			end)
+
+			timer.Simple(3, function()
+				if (IsValid(BackGroundPanel)) then
+					BackGroundPanel:Remove()
+				end
 			end)
 		end )
 	else

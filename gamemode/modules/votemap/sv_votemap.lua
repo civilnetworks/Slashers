@@ -70,7 +70,9 @@ local function changeMap()
       winner = GM.MAPS[ math.random( #GM.MAPS ) ]
     end
     print("Map changed to",string.StripExtension( winner))
-    RunConsoleCommand("changelevel", string.StripExtension( winner))
+
+    RunConsoleCommand("gamemode", "slashers")
+    RunConsoleCommand("changelevel", string.StripExtension(winner))
 	end
 end
 hook.Add("sls_round_PostStart", "sls_votemap_Checkchange", changeMap)

@@ -71,7 +71,6 @@ local function changeMap()
     end
     print("Map changed to",string.StripExtension( winner))
 
-    RunConsoleCommand("gamemode", "slashers")
     RunConsoleCommand("changelevel", string.StripExtension(winner))
 	end
 end

@@ -58,18 +58,18 @@ if CLIENT then
 		if table.HasValue(GAMEMODE.ROUND.Survivors, ply )  then
 
 			if 	ply.Stamina >= 10 then
-				net.Start("stopSound")
-					net.WriteString("Breathing")
-				net.SendToServer()
+				-- net.Start("stopSound")
+				-- 	net.WriteString("Breathing")
+				-- net.SendToServer()
 
 				-- ply:StopSound( "Breathing" )
 				AlreadyBreathing = false
 			end
 
 			if 	!ply:Alive() then
-				net.Start("stopSound")
-				net.WriteString("Breathing")
-				net.SendToServer()
+				-- net.Start("stopSound")
+				-- net.WriteString("Breathing")
+				-- net.SendToServer()
 
 				ply.Stamina = 100
 				AlreadyBreathing = false
@@ -79,9 +79,9 @@ if CLIENT then
 
 				if not AlreadyBreathing and ply.Stamina<=30 then
 
-					net.Start("wantedSound")
-					net.WriteString("Breathing")
-					net.SendToServer()
+					-- net.Start("wantedSound")
+					-- net.WriteString("Breathing")
+					-- net.SendToServer()
 					-- ply:EmitSound("Breathing")
 					AlreadyBreathing = true
 				end
@@ -117,9 +117,9 @@ if CLIENT then
 
 				if not AlreadyBreathing and ply.Stamina<=60 then
 
-					net.Start("wantedSound")
-					net.WriteString("Breathing")
-					net.SendToServer()
+					-- net.Start("wantedSound")
+					-- net.WriteString("Breathing")
+					-- net.SendToServer()
 					-- ply:EmitSound("Breathing")
 
 					AlreadyBreathing = true

@@ -56,7 +56,6 @@ function ENT:Use(ply)
 			net.Start( "modifyObjectiveSlasher" )
 						net.WriteTable({"round_mission_jerrycan", NbJerricanToFound})
 						net.SendOmit(GM.ROUND.Killer)
-
 		end
 		if (NbJerricanToFound == 0) then
 			net.Start( "objectiveSlasher" )
@@ -69,5 +68,7 @@ function ENT:Use(ply)
 		end
 		self:EmitSound("player/shove_01.wav",100,100,1,CHAN_AUTO)
 		self:Remove()
+
+		hook.Run("Slashers_JerrycanPickedUp", self, ply)
 	end
 end

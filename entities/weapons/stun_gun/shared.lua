@@ -115,6 +115,8 @@ if SERVER then
 			target.stungun_walkspeed = target:GetWalkSpeed()
 			target:SetRunSpeed(50)
 			target:SetWalkSpeed(50)
+
+			hook.Run("Slashers_StunnedKiller", target, dmg:GetAttacker())
 		end
 	end
 	hook.Add("EntityTakeDamage", "stungun_EntityTakeDamage", EntityTakeDamage)

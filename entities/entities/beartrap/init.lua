@@ -43,6 +43,8 @@ local function ActivateOnPlayer(ent, self)
 	RefreshTap(ent, self)
 
 	self.lasttime = CurTime()
+
+	hook.Run("Slashers_BeartrapCapture", self, ent)
 end
 
 function ENT:DesactivateOnPlayer(ent, self)

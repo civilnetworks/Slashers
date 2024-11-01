@@ -100,6 +100,8 @@ function ENT:Use(activator, caller)
 			net.SendOmit(GM.ROUND.Killer)
 			self.Active = true
 			hook.Call("sls_NextObjective")
+
+			hook.Run("Slashers_GeneratorActivated", self, caller)
 		end
 	else
 		self:SetUseType( SIMPLE_USE )

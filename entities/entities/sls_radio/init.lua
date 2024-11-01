@@ -67,6 +67,8 @@ function ENT:Use(ply)
 		hook.Call("sls_NextObjective")
 		self.Active = true
 		self:EmitSound("slashers_radio")
+
+		hook.Run("Slashers_RadioActivated", self, ply)
 	else
 		if (!self:GetNWBool( 'activated')) then
 				net.Start( "notificationSlasher" )

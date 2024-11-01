@@ -19,6 +19,8 @@ if SERVER then
 		timer.Simple(1, function()
 			ply:Kill()
 			ply:Freeze(false)
+
+			hook.Run("Slashers_DoorAxeKill", ent, ply)
 		end)
 		ent.trapeddoor = 2
 	end )

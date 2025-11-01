@@ -243,6 +243,8 @@ function GM:PlayerSpawn(ply)
 end
 
 local function PlayerDK(ply)
+	print("PlayerDeath", ply)
+	debug.Trace()
 	if !GM.ROUND.Active then return end
 	if #GM.ROUND:GetSurvivorsAlive() == 0 then
 		GM.ROUND:End()

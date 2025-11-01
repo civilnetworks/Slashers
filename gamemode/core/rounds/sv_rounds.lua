@@ -249,7 +249,7 @@ local function PlayerDK(ply)
 	if #GM.ROUND:GetSurvivorsAlive() == 0 then
 		GM.ROUND:End()
 	end
-	if ply:Team() == TEAM_KILLER then
+	if (#GM.ROUND:GetKillersAlive() == 0) then
 		GM.ROUND:End(true)
 	end
 

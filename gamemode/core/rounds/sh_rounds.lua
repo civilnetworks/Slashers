@@ -27,6 +27,19 @@ function GM.ROUND:GetSurvivorsAlive()
 	return alive
 end
 
+function GM.ROUND:GetKillersAlive()
+	local alive = {}
+	if (GM.ROUND.KillerTable) then
+		for ply, _ in pairs(GM.ROUND.KillerTable) do
+			if (IsValid(ply) and ply:Alive()) then
+				table.insert(alive, ply)
+			end
+		end
+	end
+
+	return alive
+end
+
 function getSurvivorByClass(class)
 	if GM.ROUND.Survivors then
 		for _, v in ipairs(GM.ROUND.Survivors) do

@@ -17,11 +17,20 @@ function GM.ROUND:ChooseKiller()
 			continue
 		end
 
+		if (v:Alive() and v:Team() == TEAM_KILLER) then
+			continue
+		end
+
 		if !tbl[v.choosekiller] then
 			tbl[v.choosekiller] = {}
 		end
 		table.insert(tbl[v.choosekiller], v)
 	end
+
+	if (table.Count(tbl) == 0) then
+		return nil
+	end
+
 	for k, _ in pairs(tbl) do
 		winkey = math.max(winkey, k)
 	end
